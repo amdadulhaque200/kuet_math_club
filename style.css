@@ -87,6 +87,43 @@ nav {
     width: 100%;
 }
 
+.nav-links .btn-login {
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--accent-purple);
+    border-radius: 4px;
+    color: var(--white);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links .btn-login:hover {
+    background-color: var(--accent-purple);
+}
+
+.nav-links .btn-login:hover::after {
+    width: 0;
+}
+
+.nav-links .btn-signup {
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--white);
+    border-radius: 4px;
+    color: var(--primary-blue);
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-links .btn-signup:hover {
+    background-color: var(--accent-purple);
+    color: var(--white);
+    border-color: var(--accent-purple);
+}
+
+.nav-links .btn-signup:hover::after {
+    width: 0;
+}
+
 /* ============ HERO SECTION ============ */
 .hero {
     margin-top: 60px;
