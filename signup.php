@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUET Math Club - Login</title>
+    <title>KUET Math Club - Sign Up</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -115,41 +115,61 @@
         <div class="navbar-container">
             <div class="logo">KUET Math Club</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="events.php">Events</a></li>
+                <li><a href="team.php">Team</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="signup.php" class="btn-signup">Sign Up</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ============ LOGIN SECTION ============ -->
+    <!-- ============ SIGN UP SECTION ============ -->
     <div class="auth-container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <a href="index.php" class="back-link">← Back to Home</a>
         <div class="auth-header">
-            <h1>Login</h1>
-            <p>Welcome back to KUET Math Club</p>
+            <h1>Sign Up</h1>
+            <p>Join KUET Math Club and start your journey</p>
         </div>
         <form>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
             </div>
 
-            <button type="submit" class="submit-btn">Login</button>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" id="department" name="department" placeholder="Enter your department" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm your password" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Account</button>
         </form>
 
         <div class="auth-footer">
-            Don't have an account? <a href="signup.html">Sign Up</a>
+            Already have an account? <a href="login.php">Login</a>
         </div>
     </div>
 
@@ -159,12 +179,12 @@
             <div class="footer-brand">KUET Math Club</div>
             <p>Exploring Mathematics Beyond Boundaries</p>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="events.html">Events</a>
-                <a href="team.html">Team</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="index.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="events.php">Events</a>
+                <a href="team.php">Team</a>
+                <a href="gallery.php">Gallery</a>
+                <a href="index.php#contact">Contact</a>
             </div>
             <div class="footer-divider"></div>
             <p class="copyright">&copy; 2026 KUET Math Club. All rights reserved.</p>

@@ -16,14 +16,14 @@
         <div class="navbar-container">
             <div class="logo">KUET Math Club</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="events.php">Events</a></li>
+                <li><a href="team.php">Team</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="signup.php" class="btn-signup">Sign Up</a></li>
             </ul>
         </div>
     </nav>
@@ -312,12 +312,12 @@
             <div class="footer-brand">KUET Math Club</div>
             <p>Exploring Mathematics Beyond Boundaries</p>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="events.html">Events</a>
-                <a href="team.html">Team</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="index.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="events.php">Events</a>
+                <a href="team.php">Team</a>
+                <a href="gallery.php">Gallery</a>
+                <a href="index.php#contact">Contact</a>
             </div>
             <div class="footer-divider"></div>
             <p class="copyright">&copy; 2026 KUET Math Club. All rights reserved.</p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUET Math Club - Gallery</title>
+    <title>KUET Math Club - About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,32 +16,38 @@
         <div class="navbar-container">
             <div class="logo">KUET Math Club</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="events.php">Events</a></li>
+                <li><a href="team.php">Team</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="signup.php" class="btn-signup">Sign Up</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ============ GALLERY SECTION ============ -->
-    <section class="gallery" id="gallery">
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">📸</div>
-                <div class="gallery-item">🎨</div>
-                <div class="gallery-item">📷</div>
-                <div class="gallery-item">🖼️</div>
-                <div class="gallery-item">🎭</div>
-                <div class="gallery-item">✨</div>
-                <div class="gallery-item">🌟</div>
-                <div class="gallery-item">💫</div>
-                <div class="gallery-item">🎪</div>
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>
+                        The KUET Math Club was founded with a vision to foster a deep passion for 
+                        mathematics among students. We believe that mathematics is not just about solving 
+                        equations, but about understanding the fundamental patterns that govern our world.
+                    </p>
+                    <h3 style="margin-top: 2rem;">Our Vision</h3>
+                    <p>
+                        We aim to create an inclusive environment where students can explore mathematical 
+                        concepts through engaging activities, collaborative projects, and mentorship. Our goal 
+                        is to inspire the next generation of mathematicians and problem-solvers.
+                    </p>
+                </div>
+                <div class="about-image">📐</div>
             </div>
         </div>
     </section>
@@ -80,12 +86,12 @@
             <div class="footer-brand">KUET Math Club</div>
             <p>Exploring Mathematics Beyond Boundaries</p>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="events.html">Events</a>
-                <a href="team.html">Team</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="index.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="events.php">Events</a>
+                <a href="team.php">Team</a>
+                <a href="gallery.php">Gallery</a>
+                <a href="index.php#contact">Contact</a>
             </div>
             <div class="footer-divider"></div>
             <p class="copyright">&copy; 2026 KUET Math Club. All rights reserved.</p>
