@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUET Math Club - Exploring Mathematics Beyond Boundaries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav>
+        <div class="navbar-container">
+            <div class="logo">KUET Math Club</div>
+            <ul class="nav-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="events.php">Events</a></li>
+                <li><a href="team.php">Team</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="signup.php" class="btn-signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>KUET Math Club</h1>
+            <p class="hero-tagline">Exploring Mathematics Beyond Boundaries</p>
+            <p class="hero-description">
+                Join a vibrant community of mathematics enthusiasts dedicated to exploring 
+                the beauty and elegance of mathematical concepts through collaborative learning, 
+                engaging workshops, and exciting competitions.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Join Us</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS SECTION ============ -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">Our Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-number">500+</div>
+                    <div class="achievement-title">Active Members</div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-number">50+</div>
+                    <div class="achievement-title">Events Conducted</div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-number">15+</div>
+                    <div class="achievement-title">Research Papers</div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-number">12</div>
+                    <div class="achievement-title">National Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">KUET Math Club</div>
+            <p>Exploring Mathematics Beyond Boundaries</p>
+            <div class="footer-links">
+                <a href="index.php">Home</a>
+                <a href="about.php">About</a>
+                <a href="events.php">Events</a>
+                <a href="team.php">Team</a>
+                <a href="gallery.php">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="copyright">&copy; 2026 KUET Math Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
