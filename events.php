@@ -103,7 +103,6 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
 
-    <!-- ============ NAVBAR ============ -->
     <nav>
         <div class="navbar-container">
             <div class="logo">KUET Math Club</div>
@@ -113,7 +112,6 @@ if (isset($_SESSION['user_id'])) {
                 <li><a href="events.php">Events</a></li>
                 <li><a href="team.php">Team</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <?php if ($_SESSION['user_role'] === 'executive'): ?>
                         <li><a href="dashboard.php" class="btn-login">Dashboard</a></li>
@@ -127,7 +125,6 @@ if (isset($_SESSION['user_id'])) {
         </div>
     </nav>
 
-    <!-- ============ EVENTS SECTION ============ -->
     <section class="events" id="events">
         <div class="container">
 
@@ -199,7 +196,6 @@ if (isset($_SESSION['user_id'])) {
                                     </form>
                                 <?php endif; ?>
                             <?php endif; ?>
-
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -211,32 +207,6 @@ if (isset($_SESSION['user_id'])) {
         </div>
     </section>
 
-    <!-- ============ ACHIEVEMENTS SECTION ============ -->
-    <section class="achievements">
-        <div class="container">
-            <h2 class="section-title">Our Achievements</h2>
-            <div class="achievements-grid">
-                <div class="achievement-item">
-                    <div class="achievement-number">500+</div>
-                    <div class="achievement-title">Active Members</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">50+</div>
-                    <div class="achievement-title">Events Conducted</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">15+</div>
-                    <div class="achievement-title">Research Papers</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">12</div>
-                    <div class="achievement-title">National Awards</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ FOOTER ============ -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">KUET Math Club</div>
@@ -247,7 +217,6 @@ if (isset($_SESSION['user_id'])) {
                 <a href="events.php">Events</a>
                 <a href="team.php">Team</a>
                 <a href="gallery.php">Gallery</a>
-                <a href="index.php#contact">Contact</a>
             </div>
             <div class="footer-divider"></div>
             <p class="copyright">&copy; <?php echo date('Y'); ?> KUET Math Club. All rights reserved.</p>

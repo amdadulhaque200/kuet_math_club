@@ -211,38 +211,180 @@ while ($row = $regResult->fetch_assoc()) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+
+        /* ── DASHBOARD NAV ── */
+        .db-nav {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        }
+        .db-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            gap: 1rem;
+        }
+        .db-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .db-nav-brand .brand-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .db-nav-brand span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-blue);
+        }
+        .db-nav-tabs {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2px;
+            flex: 1;
+            justify-content: center;
+        }
+        .db-nav-tabs li a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 13px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .db-nav-tabs li a .nav-icon { font-size: 1rem; }
+        .db-nav-tabs li a:hover {
+            background: #f3f0fb;
+            color: #7e57c2;
+        }
+        .db-nav-tabs li a.active {
+            background: #ede7f6;
+            color: #5e35b1;
+            font-weight: 600;
+        }
+        .db-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .db-nav-user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: #666;
+        }
+        .db-nav-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .db-home-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #555;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .db-home-btn:hover { background: #f5f5f5; color: #333; }
+        .db-logout-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #c62828;
+            text-decoration: none;
+            border: 1px solid #ffcdd2;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .db-logout-btn:hover { background: #ffebee; border-color: #ef9a9a; }
+
+        /* ── DASHBOARD LAYOUT ── */
         .dashboard-wrapper {
             max-width: 1000px;
-            margin: 100px auto 4rem;
+            margin: 2rem auto 4rem;
             padding: 0 2rem;
         }
-        .dashboard-header {
+        .dashboard-page-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
         }
-        .dashboard-header h1 {
-            font-size: 1.8rem;
+        .dashboard-page-header h1 {
+            font-size: 1.5rem;
             color: var(--primary-blue);
             font-family: 'Montserrat', sans-serif;
+            margin: 0;
         }
-        .dashboard-header span { font-size: 0.95rem; color: var(--text-gray); }
+        .dashboard-page-header .header-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* ── CARDS ── */
         .card {
             background: var(--white);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
             margin-bottom: 2rem;
+            scroll-margin-top: 72px;
         }
         .card h2 {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
             font-family: 'Montserrat', sans-serif;
-            border-bottom: 2px solid var(--light-purple);
+            border-bottom: 2px solid #ede7f6;
             padding-bottom: 0.75rem;
         }
+
+        /* ── FORMS ── */
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .form-group { margin-bottom: 1.2rem; }
         .form-group label {
@@ -250,7 +392,7 @@ while ($row = $regResult->fetch_assoc()) {
             margin-bottom: 0.4rem;
             color: var(--dark-gray);
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
         .form-group input,
         .form-group select,
@@ -258,11 +400,12 @@ while ($row = $regResult->fetch_assoc()) {
             width: 100%;
             padding: 0.65rem 0.9rem;
             border: 1px solid var(--border-gray);
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--dark-gray);
             transition: border-color 0.3s ease;
+            box-sizing: border-box;
         }
         .form-group input:focus,
         .form-group select:focus,
@@ -274,157 +417,172 @@ while ($row = $regResult->fetch_assoc()) {
         .form-group textarea { min-height: 100px; resize: vertical; }
         .file-upload-area {
             border: 2px dashed var(--border-gray);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 1.5rem;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
             background: var(--light-gray);
         }
-        .file-upload-area:hover { border-color: var(--accent-purple); background: var(--light-purple); }
+        .file-upload-area:hover { border-color: var(--accent-purple); background: #f3f0fb; }
         .file-upload-area input[type="file"] { display: none; }
         .file-upload-area label { cursor: pointer; color: var(--accent-purple); font-weight: 500; font-size: 0.9rem; }
-        .file-upload-area p { color: var(--text-gray); font-size: 0.8rem; margin-top: 0.4rem; }
+        .file-upload-area p { color: var(--text-gray); font-size: 0.8rem; margin-top: 0.4rem; margin-bottom: 0; }
         #image-preview { margin-top: 1rem; display: none; }
-        #image-preview img { max-height: 150px; border-radius: 6px; border: 1px solid var(--border-gray); }
+        #image-preview img { max-height: 150px; border-radius: 8px; border: 1px solid var(--border-gray); }
         #file-name { margin-top: 0.5rem; font-size: 0.82rem; color: var(--text-gray); }
         #gallery-preview { margin-top: 1rem; display: none; }
-        #gallery-preview img { max-height: 150px; border-radius: 6px; border: 1px solid var(--border-gray); }
+        #gallery-preview img { max-height: 150px; border-radius: 8px; border: 1px solid var(--border-gray); }
         #gallery-file-name { margin-top: 0.5rem; font-size: 0.82rem; color: var(--text-gray); }
         .current-image { margin-bottom: 0.75rem; }
-        .current-image img { max-height: 80px; border-radius: 6px; border: 1px solid var(--border-gray); }
+        .current-image img { max-height: 80px; border-radius: 8px; border: 1px solid var(--border-gray); }
         .current-image p { font-size: 0.8rem; color: var(--text-gray); margin-top: 0.3rem; }
+
+        /* ── BUTTONS ── */
         .btn-submit {
             padding: 0.7rem 2rem;
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
             color: white;
             border: none;
-            border-radius: 6px;
-            font-size: 0.95rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
         .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(126,87,194,0.3); }
         .btn-cancel {
             padding: 0.7rem 1.5rem;
-            background: var(--light-gray);
-            color: var(--text-gray);
-            border: 1px solid var(--border-gray);
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            background: #f5f5f5;
+            color: #777;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
             margin-left: 0.5rem;
             text-decoration: none;
             display: inline-block;
+            font-family: 'Poppins', sans-serif;
         }
-        .alert { padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .btn-cancel:hover { background: #eeeeee; }
+
+        /* ── ALERTS ── */
+        .alert { padding: 0.85rem 1.1rem; border-radius: 10px; margin-bottom: 1.5rem; font-size: 0.88rem; }
         .alert-success { background: #e8f5e9; color: #1b5e20; border: 1px solid #b7dfb9; }
         .alert-error   { background: #fdecea; color: #b3261e; border: 1px solid #f5c2c0; }
-        .events-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-        .events-table th { background: var(--primary-blue); color: white; padding: 0.75rem 1rem; text-align: left; }
-        .events-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border-gray); color: var(--text-gray); }
-        .events-table tr:hover td { background: var(--light-gray); }
-        .events-table img { width: 60px; height: 40px; object-fit: cover; border-radius: 4px; }
-        .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+
+        /* ── TABLES ── */
+        .events-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+        .events-table th {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .events-table th:first-child { border-radius: 8px 0 0 0; }
+        .events-table th:last-child  { border-radius: 0 8px 0 0; }
+        .events-table td { padding: 0.7rem 1rem; border-bottom: 1px solid #f0f0f0; color: #555; vertical-align: middle; }
+        .events-table tr:last-child td { border-bottom: none; }
+        .events-table tr:hover td { background: #fafafa; }
+        .events-table img { width: 60px; height: 40px; object-fit: cover; border-radius: 6px; }
+
+        /* ── BADGES ── */
+        .badge { display: inline-block; padding: 0.22rem 0.65rem; border-radius: 20px; font-size: 0.76rem; font-weight: 600; }
         .badge-upcoming   { background: #e8f5e9; color: #2e7d32; }
         .badge-completed  { background: #f3e5f5; color: #6a1b9a; }
         .badge-executive  { background: #e3f2fd; color: #1565c0; }
         .badge-member     { background: #fff3e0; color: #e65100; }
-        .action-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .btn-edit {
-            padding: 0.3rem 0.8rem;
-            background: var(--accent-purple);
-            color: white;
+
+        /* ── ACTION BUTTONS ── */
+        .action-btns { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .btn-edit, .btn-delete, .btn-promote, .btn-demote {
+            padding: 0.28rem 0.75rem;
             border: none;
-            border-radius: 4px;
-            font-size: 0.78rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-delete {
-            padding: 0.3rem 0.8rem;
-            background: #e53935;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 0.78rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-promote {
-            padding: 0.3rem 0.8rem;
-            background: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 0.78rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-demote {
-            padding: 0.3rem 0.8rem;
-            background: #e65100;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 0.78rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-edit:hover    { background: var(--secondary-blue); }
-        .btn-delete:hover  { background: #b71c1c; }
-        .btn-promote:hover { background: #1b5e20; }
-        .btn-demote:hover  { background: #bf360c; }
-        .section-divider {
-            font-size: 0.82rem;
+            border-radius: 6px;
+            font-size: 0.76rem;
             font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            transition: all 0.2s;
+        }
+        .btn-edit    { background: #ede7f6; color: #5e35b1; }
+        .btn-delete  { background: #ffebee; color: #c62828; }
+        .btn-promote { background: #e8f5e9; color: #2e7d32; }
+        .btn-demote  { background: #fff3e0; color: #e65100; }
+        .btn-edit:hover    { background: #d1c4e9; }
+        .btn-delete:hover  { background: #ffcdd2; }
+        .btn-promote:hover { background: #c8e6c9; }
+        .btn-demote:hover  { background: #ffe0b2; }
+
+        /* ── SECTION DIVIDER ── */
+        .section-divider {
+            font-size: 0.8rem;
+            font-weight: 700;
             color: var(--accent-purple);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin: 2rem 0 1rem;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--border-gray);
+            border-top: 1px solid #ede7f6;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="navbar-container">
-            <div class="logo">KUET Math Club</div>
-            <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="events.php">Events</a></li>
-                <li><a href="team.php">Team</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="logout.php">Logout</a></li>
+    <!-- ===== DASHBOARD NAV ===== -->
+    <nav class="db-nav">
+        <div class="db-nav-inner">
+
+            <a href="index.php" class="db-nav-brand">
+                <div class="brand-icon">∑</div>
+                <span>Math Club</span>
+            </a>
+
+            <ul class="db-nav-tabs">
+                <li><a href="#add-event"><span class="nav-icon">➕</span> Add Event</a></li>
+                <li><a href="#all-events"><span class="nav-icon">📋</span> Events</a></li>
+                <li><a href="#gallery"><span class="nav-icon">🖼️</span> Gallery</a></li>
+                <li><a href="#users"><span class="nav-icon">👥</span> Users</a></li>
+                <li><a href="#registrations"><span class="nav-icon">📝</span> Registrations</a></li>
             </ul>
+
+            <div class="db-nav-right">
+                <div class="db-nav-user-info">
+                    <div class="db-nav-avatar">
+                        <?php echo strtoupper(substr($_SESSION['user_name'], 0, 2)); ?>
+                    </div>
+                    <span><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                </div>
+                <a href="index.php" class="db-home-btn">🏠 Home</a>
+                <a href="logout.php" class="db-logout-btn">⏻ Logout</a>
+            </div>
+
         </div>
     </nav>
 
     <div class="dashboard-wrapper">
 
-        <div class="dashboard-header">
+        <div class="dashboard-page-header">
             <h1>⚙️ Executive Dashboard</h1>
-            <span>Welcome, <?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+            <span class="header-meta">KUET Math Club &mdash; Executive Panel</span>
         </div>
 
         <!-- GLOBAL ALERTS -->
         <?php if ($success !== ''): ?>
-            <div class="alert alert-success"><?php echo htmlspecialchars($success); ?></div>
+            <div class="alert alert-success">✅ <?php echo htmlspecialchars($success); ?></div>
         <?php endif; ?>
         <?php if ($error !== ''): ?>
-            <div class="alert alert-error"><?php echo htmlspecialchars($error); ?></div>
+            <div class="alert alert-error">⚠️ <?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
 
         <!-- ===== ADD / EDIT EVENT ===== -->
-        <div class="card">
+        <div class="card" id="add-event">
             <h2><?php echo $editEvent ? '✏️ Edit Event' : '➕ Add New Event'; ?></h2>
             <form method="POST" action="dashboard.php" enctype="multipart/form-data">
                 <input type="hidden" name="event_id" value="<?php echo $editEvent['id'] ?? 0; ?>">
@@ -502,16 +660,16 @@ while ($row = $regResult->fetch_assoc()) {
                 </div>
 
                 <button type="submit" class="btn-submit">
-                    <?php echo $editEvent ? 'Update Event' : 'Add Event'; ?>
+                    <?php echo $editEvent ? '💾 Update Event' : '➕ Add Event'; ?>
                 </button>
                 <?php if ($editEvent): ?>
-                <a href="dashboard.php" class="btn-cancel">Cancel</a>
+                <a href="dashboard.php" class="btn-cancel">✖ Cancel</a>
                 <?php endif; ?>
             </form>
         </div>
 
         <!-- ===== ALL EVENTS LIST ===== -->
-        <div class="card">
+        <div class="card" id="all-events">
             <h2>📋 All Events</h2>
             <table class="events-table">
                 <thead>
@@ -533,7 +691,7 @@ while ($row = $regResult->fetch_assoc()) {
                             <?php if ($e['image_filename']): ?>
                             <img src="<?php echo htmlspecialchars($e['image_filename']); ?>" alt="">
                             <?php else: ?>
-                            <span style="color:#ccc;">No image</span>
+                            <span style="color:#ccc; font-size:0.8rem;">No image</span>
                             <?php endif; ?>
                         </td>
                         <td><?php echo htmlspecialchars($e['title']); ?></td>
@@ -559,7 +717,7 @@ while ($row = $regResult->fetch_assoc()) {
         </div>
 
         <!-- ===== GALLERY MANAGEMENT ===== -->
-        <div class="card">
+        <div class="card" id="gallery">
             <h2>🖼️ <?php echo $editGallery ? 'Edit Gallery Image' : 'Add Gallery Image'; ?></h2>
             <form method="POST" action="dashboard.php" enctype="multipart/form-data">
                 <input type="hidden" name="gallery_action" value="1">
@@ -598,10 +756,10 @@ while ($row = $regResult->fetch_assoc()) {
                 </div>
 
                 <button type="submit" class="btn-submit">
-                    <?php echo $editGallery ? 'Update Image' : 'Add to Gallery'; ?>
+                    <?php echo $editGallery ? '💾 Update Image' : '➕ Add to Gallery'; ?>
                 </button>
                 <?php if ($editGallery): ?>
-                <a href="dashboard.php" class="btn-cancel">Cancel</a>
+                <a href="dashboard.php" class="btn-cancel">✖ Cancel</a>
                 <?php endif; ?>
             </form>
 
@@ -641,7 +799,7 @@ while ($row = $regResult->fetch_assoc()) {
         </div>
 
         <!-- ===== USER MANAGEMENT ===== -->
-        <div class="card">
+        <div class="card" id="users">
             <h2>👥 User Management</h2>
             <table class="events-table">
                 <thead>
@@ -674,7 +832,7 @@ while ($row = $regResult->fetch_assoc()) {
                         </td>
                         <td>
                             <?php if ($u['id'] === (int)$_SESSION['user_id']): ?>
-                                <span style="color:#ccc; font-size:0.8rem;">You</span>
+                                <span style="color:#bbb; font-size:0.78rem;">You</span>
                             <?php elseif ($u['role'] === 'member'): ?>
                                 <a href="dashboard.php?promote=<?php echo $u['id']; ?>"
                                    class="btn-promote"
@@ -696,18 +854,18 @@ while ($row = $regResult->fetch_assoc()) {
         </div>
 
         <!-- ===== EVENT REGISTRATIONS ===== -->
-        <div class="card">
+        <div class="card" id="registrations">
             <h2>📝 Event Registrations</h2>
             <?php if (empty($regGrouped)): ?>
-                <p style="color:#888;">No registrations yet.</p>
+                <p style="color:#aaa; font-size:0.9rem;">No registrations yet.</p>
             <?php else:
                 foreach ($regGrouped as $eventTitle => $members): ?>
                 <div style="margin-bottom:2rem;">
-                    <h3 style="font-size:1rem; color:var(--primary-blue); margin-bottom:0.5rem;">
+                    <h3 style="font-size:0.95rem; color:var(--primary-blue); margin-bottom:0.6rem; font-family:'Montserrat',sans-serif;">
                         📅 <?php echo htmlspecialchars($eventTitle); ?>
-                        <span style="font-size:0.82rem; color:#888; font-weight:400;">
+                        <span style="font-size:0.8rem; color:#999; font-weight:400; margin-left:6px;">
                             — <?php echo htmlspecialchars($members[0]['event_date']); ?>
-                            (<?php echo count($members); ?> registered)
+                            &nbsp;·&nbsp; <?php echo count($members); ?> registered
                         </span>
                     </h3>
                     <table class="events-table">
@@ -742,7 +900,7 @@ while ($row = $regResult->fetch_assoc()) {
             <?php endforeach; endif; ?>
         </div>
 
-    </div>
+    </div><!-- /.dashboard-wrapper -->
 
     <script>
         function previewImage(input) {
@@ -774,6 +932,27 @@ while ($row = $regResult->fetch_assoc()) {
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
+        // Active nav highlight on scroll
+        const sections = ['add-event', 'all-events', 'gallery', 'users', 'registrations'];
+        const navLinks = document.querySelectorAll('.db-nav-tabs a');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && window.scrollY >= el.offsetTop - 80) {
+                    current = id;
+                }
+            });
+            navLinks.forEach(a => {
+                const href = a.getAttribute('href').replace('#', '');
+                a.classList.toggle('active', href === current);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
     </script>
 
 </body>
