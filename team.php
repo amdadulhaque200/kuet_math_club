@@ -75,31 +75,6 @@
         </div>
     </section>
 
-    <!-- ============ ACHIEVEMENTS ============ -->
-    <section class="achievements">
-        <div class="container">
-            <h2 class="section-title">Our Achievements</h2>
-            <div class="achievements-grid">
-                <div class="achievement-item">
-                    <div class="achievement-number">500+</div>
-                    <div class="achievement-title">Active Members</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">50+</div>
-                    <div class="achievement-title">Events Conducted</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">15+</div>
-                    <div class="achievement-title">Research Papers</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">12</div>
-                    <div class="achievement-title">National Awards</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ============ FOOTER ============ -->
     <footer>
         <div class="footer-content">

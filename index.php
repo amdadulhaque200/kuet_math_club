@@ -97,51 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 
-    <!-- ============ CONTACT SECTION ============ -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-wrapper">
-
-                <?php if ($contactSuccess !== ''): ?>
-                    <div style="background:#e8f5e9; color:#1b5e20; border:1px solid #b7dfb9;
-                                padding:0.75rem 1rem; border-radius:6px; margin-bottom:1.5rem; font-size:0.95rem;">
-                        <?php echo htmlspecialchars($contactSuccess); ?>
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($contactError !== ''): ?>
-                    <div style="background:#fdecea; color:#b3261e; border:1px solid #f5c2c0;
-                                padding:0.75rem 1rem; border-radius:6px; margin-bottom:1.5rem; font-size:0.95rem;">
-                        <?php echo htmlspecialchars($contactError); ?>
-                    </div>
-                <?php endif; ?>
-
-                <form method="POST" action="index.php#contact">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name"
-                               placeholder="Enter your full name"
-                               value="<?php echo htmlspecialchars($_POST['name'] ?? ''); ?>" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email"
-                               placeholder="Enter your email address"
-                               value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message"
-                                  placeholder="Write your message here..." required><?php echo htmlspecialchars($_POST['message'] ?? ''); ?></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-
-            </div>
-        </div>
-    </section>
-
     <!-- ============ FOOTER ============ -->
     <footer>
         <div class="footer-content">
